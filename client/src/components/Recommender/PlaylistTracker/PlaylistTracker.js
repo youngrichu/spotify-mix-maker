@@ -92,7 +92,7 @@ export default function PlaylistTrack(props) {
       else 
          handleGetPlaylists('');
 
-   }, [getRecState('CUR_PLAYLIST_ID'), getRecState('PLAYLIST_UPDATE')]);
+   }, [getRecState, handleGetPlaylists, handleGetTracks]);
 
    return (
       <div>
