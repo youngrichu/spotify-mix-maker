@@ -10,7 +10,8 @@ const PORT = process.env.PORT || 3000
 const clientURL = process.env.CLIENT_URL || 'http://localhost:3001';
 
 require('dotenv').config();
-app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 if (process.env.NODE_ENV === 'production')
