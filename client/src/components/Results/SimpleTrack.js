@@ -5,7 +5,7 @@ import { PlayerContext } from '../contexts';
 import './SimpleTrack.css';
 
 export default props => {
-   const [_, setId] = useContext(PlayerContext)
+   const [, setId] = useContext(PlayerContext)
    const history = useHistory();
    const data = props.data;
 

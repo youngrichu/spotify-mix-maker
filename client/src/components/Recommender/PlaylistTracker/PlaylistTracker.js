@@ -19,11 +19,11 @@ export default function PlaylistTrack(props) {
 
    const prevPage = () => {
       handleGetPlaylists(prevPageQuery);
-   }
+   }, []);
 
    const nextPage = () => {
       handleGetPlaylists(nextPageQuery)
-   }
+   }, []);
    
    const reset = () => {
       setRecState('CUR_PLAYLIST_ID', '');
@@ -59,7 +59,7 @@ export default function PlaylistTrack(props) {
       });
    }
 
-   const handleGetPlaylists = query => {
+   const handleGetPlaylists = useCallback((query) => {
       getUserPlaylists(query, pagingObj => {
          setPrevPageQuery(pagingObj.previous && pagingObj.previous.split('?')[1]);
          setNextPageQuery(pagingObj.next && pagingObj.next.split('?')[1]);
@@ -71,7 +71,7 @@ export default function PlaylistTrack(props) {
       });
    }
 
-   const handleGetTracks = query => {
+   const handleGetTracks = useCallback((query) => {
       const curPlaylistID = getRecState('CUR_PLAYLIST_ID');
       getPlaylistItems(curPlaylistID, query, tracks => {
          setItems(tracks.map((track, idx) => {

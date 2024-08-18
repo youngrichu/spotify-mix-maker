@@ -7,7 +7,7 @@ import queryString from 'query-string';
 import { SimpleTrack }  from '../components';
 
 const TrackDetails = (props) => {
-   const [_, setId] = useContext(PlayerContext)
+   const [, setId] = useContext(PlayerContext)
    const data = props.data;
 
    const openInSpotify = () => window.open(data.external_urls.spotify);
