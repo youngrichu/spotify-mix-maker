@@ -47,7 +47,7 @@ export default function PlaylistTrack(props) {
       deleteTrackFromPlaylist(curPlaylistID, body, delRes => {
          setRecState('PLAYLIST_UPDATE', delRes);
       });
-   }, []);
+   };
 
    const handleCreatePlaylist = name => {
       createPlaylist({name: name}, playlist =>{
@@ -57,7 +57,7 @@ export default function PlaylistTrack(props) {
          setPrevPageQuery('');
          setNextPageQuery('');
       });
-   }, []);
+   };
 
    const handleGetPlaylists = useCallback((query) => {
       getUserPlaylists(query, pagingObj => {
@@ -69,7 +69,7 @@ export default function PlaylistTrack(props) {
             return <SimplePlaylist data={playlist} key={idx}/>;
          }));
       });
-   }
+   }, []);
 
    const handleGetTracks = useCallback((query) => {
       const curPlaylistID = getRecState('CUR_PLAYLIST_ID');
@@ -79,7 +79,7 @@ export default function PlaylistTrack(props) {
             return <SimpleTrack data={track} key={idx}/>;
          }));
       });
-   }
+   }, []);
 
    useEffect(() => {
       const curPlaylistID = getRecState('CUR_PLAYLIST_ID');
