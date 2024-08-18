@@ -13,7 +13,8 @@ export default props => {
              width='200' 
              height='200'
              style={{cursor: 'pointer'}}
-             onClick={data.onCardClick ? () => data.onCardClick(data) : openInSpotify}/>
+             onClick={data.onCardClick ? () => data.onCardClick(data) : openInSpotify}
+             alt={data.name}/>
             <span style={{'fontSize':'large'}}>
                <b>{data.name}</b> {data.genres.length ? `genres: ${data.genres.join(', ')}` : ''}
             </span>

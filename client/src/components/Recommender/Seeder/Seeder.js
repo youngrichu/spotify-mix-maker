@@ -9,7 +9,7 @@ const SeedSelectedItem = props => {
    return (
       <Col>
          <Card style={{cursor: 'pointer'}} onClick={() => props.onCardClick(props.id, props.type)}>
-            <img src={props.imgSrc} width='100' height='100'/>
+            <img src={props.imgSrc} width='100' height='100' alt={props.name}/>
             {props.name}
          </Card>
       </Col>

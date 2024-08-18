@@ -11,7 +11,8 @@ export default function Player(props) {
                    width="300" height="80" 
                    frameBorder="0" 
                    allowtransparency="true" 
-                   allow="encrypted-media"></iframe>
+                   allow="encrypted-media"
+                   title="Spotify Player"></iframe>
        : ''
    );
 }

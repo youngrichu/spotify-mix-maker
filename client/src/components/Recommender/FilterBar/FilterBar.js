@@ -56,7 +56,7 @@ const AttributeSetting = props => {;
       delete newFilters[`target_${props.attr}`];
       delete newFilters[`min_${props.attr}`];
       delete newFilters[`max_${props.attr}`];
-      if (props.attr == 'key')
+      if (props.attr === 'key')
          delete newFilters['target_mode'];
       
       setLocalFilters({});

@@ -8,7 +8,7 @@ export default props => {
       <div>
          <Card style={{cursor: 'pointer'}} onClick={
           data.onCardClick ? () => data.onCardClick(data) : () => {}}>
-            <img src={data.imgSrc} width='200' height='200'/>
+            <img src={data.imgSrc} width='200' height='200' alt={data.name}/>
             <Card.Body>
                {data.name}
             </Card.Body>

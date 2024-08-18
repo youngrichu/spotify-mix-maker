@@ -17,7 +17,7 @@ export default function Home(props) {
       getPlaylistItems(topChartsMap[curPlaylistID], '', topTracks => {
          setTracks(topTracks.map((track, idx) => <SimpleTrack data={track} key={idx}/>));
       })
-   }, [curPlaylistID]);
+   }, [curPlaylistID, topChartsMap]);
 
    return (
       <section className='container'>
