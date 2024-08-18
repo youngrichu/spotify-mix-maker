@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, useCallback } from 'react';
 import { FormControl, Button, Card } from 'react-bootstrap';
 import { RecommenderContext } from '../../contexts'
 import Cookies from 'js-cookie';
