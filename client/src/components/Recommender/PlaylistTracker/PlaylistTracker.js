@@ -19,18 +19,18 @@ export default function PlaylistTrack(props) {
 
    const prevPage = () => {
       handleGetPlaylists(prevPageQuery);
-   }, []);
+   };
 
    const nextPage = () => {
       handleGetPlaylists(nextPageQuery)
-   }, []);
+   };
    
    const reset = () => {
       setRecState('CUR_PLAYLIST_ID', '');
       setCurPlaylist(null);
       setPrevPageQuery(null);
       setNextPageQuery(null);
-   }
+   }, []);
 
    const selectPlaylist = data => {
       setRecState('CUR_PLAYLIST_ID', data.id);
@@ -38,7 +38,7 @@ export default function PlaylistTrack(props) {
       setCurPlaylist(<SimplePlaylist data={data}/>);
       setPrevPageQuery('');
       setNextPageQuery('');
-   }
+   }, []);
 
    const deleteTrack = data => {
       const curPlaylistID = getRecState('CUR_PLAYLIST_ID');
