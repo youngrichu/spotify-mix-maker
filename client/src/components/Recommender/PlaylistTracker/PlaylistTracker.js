@@ -30,7 +30,7 @@ export default function PlaylistTrack(props) {
       setCurPlaylist(null);
       setPrevPageQuery(null);
       setNextPageQuery(null);
-   }, []);
+   };
 
    const selectPlaylist = data => {
       setRecState('CUR_PLAYLIST_ID', data.id);
@@ -38,7 +38,7 @@ export default function PlaylistTrack(props) {
       setCurPlaylist(<SimplePlaylist data={data}/>);
       setPrevPageQuery('');
       setNextPageQuery('');
-   }, []);
+   };
 
    const deleteTrack = data => {
       const curPlaylistID = getRecState('CUR_PLAYLIST_ID');
@@ -47,7 +47,7 @@ export default function PlaylistTrack(props) {
       deleteTrackFromPlaylist(curPlaylistID, body, delRes => {
          setRecState('PLAYLIST_UPDATE', delRes);
       });
-   }
+   }, []);
 
    const handleCreatePlaylist = name => {
       createPlaylist({name: name}, playlist =>{
@@ -57,7 +57,7 @@ export default function PlaylistTrack(props) {
          setPrevPageQuery('');
          setNextPageQuery('');
       });
-   }
+   }, []);
 
    const handleGetPlaylists = useCallback((query) => {
       getUserPlaylists(query, pagingObj => {
