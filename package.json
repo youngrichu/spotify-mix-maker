@@ -28,6 +28,6 @@
     "path": "^0.12.7",
     "query-string": "^6.13.7",
     "cross-env": "^7.0.3",
-    "chokidar": "^3.0.0"
+    "chokidar": "^3.5.3"
   }
 }
