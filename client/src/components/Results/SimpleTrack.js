@@ -5,7 +5,7 @@ import { PlayerContext } from '../contexts';
 import './SimpleTrack.css';
 
 export default props => {
-   const [id, setId] = useContext(PlayerContext)
+   const [_, setId] = useContext(PlayerContext)
    const history = useHistory();
    const data = props.data;
 
@@ -23,6 +23,7 @@ export default props => {
             width='200' height='200'
             style={{cursor: 'pointer'}}
             onClick={data.onCardClick ? () => { data.onCardClick(data); } : goToDetails}
+            alt={data.name}
             />
          <span style={{'fontSize':'large'}}>
             <b>{data.name}</b>{` by: ${data.artists.map(artist => artist.name).join(', ')}`}

@@ -7,14 +7,14 @@ import queryString from 'query-string';
 import { SimpleTrack }  from '../components';
 
 const TrackDetails = (props) => {
-   const [id, setId] = useContext(PlayerContext)
+   const [_, setId] = useContext(PlayerContext)
    const data = props.data;
 
    const openInSpotify = () => window.open(data.external_urls.spotify);
 
    return (
       <Card style={{display:'block', margin:'10px 10px 10px 10px'}}>
-         <img src={data.imgSrc} width='200' height='200'/>
+         <img src={data.imgSrc} width='200' height='200' alt={data.name}/>
          <Card.Body>
             <span style={{'fontSize':'large'}}>
                <b>{data.name}</b>{` by: ${data.artists.map(artist => artist.name).join(', ')}`}
@@ -73,7 +73,7 @@ export default function Details(props) {
             setTrack(<TrackDetails data={detailedTrack}></TrackDetails>);
          });
       }
-   }, [window.location.pathname]);
+   }, []);
 
    useEffect(() => {
       let query;
@@ -87,7 +87,7 @@ export default function Details(props) {
             setSearchRes(tracks.map((track, idx) => <SimpleTrack data={track} key={idx}/>));
          });
       }
-   }, [window.location.search]);
+   }, []);
    
    return (
       <section className='container'>
